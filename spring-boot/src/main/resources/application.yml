@@ -1,0 +1,26 @@
+
+logging:
+  file: /home/jason/log.log
+  level:
+    org:
+      springframework:
+        web: error
+spring:
+  profiles:
+    active: prod
+server:
+  port: 9001
+---
+spring:
+  profiles: dev
+pop:
+  name: jason-dev
+  age: 37
+
+
+---
+spring:
+  profiles: prod
+pop:
+  name: jason-prod
+  age: 37
