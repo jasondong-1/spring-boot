@@ -5,16 +5,12 @@ import com.jason.springstudy.config.Xmanager;
 import com.jason.springstudy.model.Person;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.*;
+import java.net.*;
 
 public class RestTest {
+
+
     public static URL getUrl() throws MalformedURLException {
         return new URL("http://localhost:9001/tai/kill3?appid=name");
     }
@@ -57,7 +53,8 @@ public class RestTest {
         System.out.println(person);
     }
 
-    public static void main(String[] args) throws IOException {
-        kill(Person.class);
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        //kill(Person.class);
+        new RestTest();
     }
 }
