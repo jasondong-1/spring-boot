@@ -17,6 +17,8 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>spring-boot</module>
+		<!-->不用spring默认配置来配置信息<-->
+		<module>spring-boot-without-config</module>
 	</modules>
 	<properties>
 		<java.version>1.8</java.version>

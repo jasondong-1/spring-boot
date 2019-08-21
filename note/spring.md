@@ -8,3 +8,4 @@ Could not resolve placeholder 'slave.register.timeout' in value "${slave.registe
 都加载到了classpath，这样classpath下的applicationi.yml 可能被覆盖了，从而导致mainclass加载了错误的配置，  
 解决办法是java -cp 中不添加不用的spring-boot 项目  
 
+### spring 用代码来进行配置
