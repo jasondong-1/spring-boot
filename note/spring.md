@@ -8,4 +8,12 @@ Could not resolve placeholder 'slave.register.timeout' in value "${slave.registe
 都加载到了classpath，这样classpath下的applicationi.yml 可能被覆盖了，从而导致mainclass加载了错误的配置，  
 解决办法是java -cp 中不添加不用的spring-boot 项目  
 
-### spring 用代码来进行配置
+### spring 用代码来进行配置  
+spring-boot可以实现不从外部配置文件读取配置信息，而是采用代码实现，请参考[这里](https://github.com/jasondong-1/spring-boot/tree/master/spring-boot-without-config)  
+因为我的代码用的spring-boot 版本是1.5.6,所以使用了EmbeddedServletContainerCustomizer接口  
+
+
+### spring-boot 注入依赖包中的组件  
+1.首先第三方依赖包中的类必须加有@Component @Service 注解  
+2.@SpringBootApplication(scanBasePackages = {"com.jason"}) 注解中加入扫描范围，不采用默认的    
+  
