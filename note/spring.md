@@ -16,4 +16,27 @@ spring-boot可以实现不从外部配置文件读取配置信息，而是采用
 ### spring-boot 注入依赖包中的组件  
 1.首先第三方依赖包中的类必须加有@Component @Service 注解  
 2.@SpringBootApplication(scanBasePackages = {"com.jason"}) 注解中加入扫描范围，不采用默认的    
-  
+
+### spring-boot + slf4f-log4j  
+1.首先添加依赖，最好将该依赖添加到第一个  
+```
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+```  
+2.因spring-boot-starter 中的logback依赖与1 中的依赖有冲突，将其exclude掉  
+```
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+```
+ 
