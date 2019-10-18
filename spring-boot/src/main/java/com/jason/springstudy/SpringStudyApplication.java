@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+
 @Controller
 @SpringBootApplication(scanBasePackages = {"com.jason"})
 @RequestMapping("/")
@@ -24,7 +26,7 @@ public class SpringStudyApplication {
     @Autowired
     private ConfigTest configTest;
     private Logger logger = LoggerFactory.getLogger(getClass());
-    @Autowired
+    @Resource
     private Fruit fruit;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
